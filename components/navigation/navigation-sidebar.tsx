@@ -25,7 +25,7 @@ const NavigationSidebar = async () => {
     })
     return (
         <div
-            className='space-y-4 flex flex-col items-center h-full text-primary w-full dark:bg-[#1e1f22] bg-[#E3E5E8] py-3'
+            className='space-y-4 flex flex-col items-center h-full text-primary w-full dark:bg-[#1E1F22] bg-[#E3E5E8] py-3'
         >
             <NavigationAction />
             <Separator
@@ -36,7 +36,7 @@ const NavigationSidebar = async () => {
             >
                 {
                     servers.map((server) => (
-                        <div key={server.id}>
+                        <div key={server.id} className='mb-4'>
                             <NavigationItem
                                 id={server.id}
                                 name={server.name}
