@@ -1,18 +1,18 @@
 "use client";
 
+import * as z from "zod";
 import qs from "query-string";
 import axios from "axios";
-import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { ChannelType } from "@prisma/client";
 
 import {
     Dialog,
+    DialogTitle,
     DialogContent,
     DialogFooter,
     DialogHeader,
-    DialogTitle,
 } from "@/components/ui/dialog";
 import {
     Form,
@@ -49,8 +49,8 @@ const formSchema = z.object({
 
 export const CreateChannelModal = () => {
     const { isOpen, onClose, type, data } = useModal();
-    const router = useRouter();
     const params = useParams();
+    const router = useRouter();
 
     const isModalOpen = isOpen && type === "createChannel";
     const { channelType } = data;
@@ -115,7 +115,7 @@ export const CreateChannelModal = () => {
                                         <FormLabel
                                             className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70"
                                         >
-                                            Channel name
+                                            Channel Name
                                         </FormLabel>
                                         <FormControl>
                                             <Input
