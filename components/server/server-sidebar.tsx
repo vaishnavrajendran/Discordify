@@ -7,11 +7,10 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
-
-// import { ServerSearch } from "./server-search";
-// import { ServerSection } from "./server-section";
-// import { ServerChannel } from "./server-channel";
-// import { ServerMember } from "./server-member";
+import { ServerSearch } from "@/components/server/server-search";
+import { ServerSection } from "@/components/server/server-section";
+import { ServerChannel } from "@/components/server/server-channel";
+import { ServerMember } from "@/components/server/server-member";
 
 interface ServerSidebarProps {
   serverId: string;
@@ -76,9 +75,9 @@ export const ServerSidebar = async ({
         server={server}
         role={role}
       />
-      {/* <ScrollArea className="flex-1 px-3">
-        <div className="mt-2"> */}
-      {/* <ServerSearch
+      <ScrollArea className="flex-1 px-3">
+        <div className="mt-2">
+          <ServerSearch
             data={[
               {
                 label: "Text Channels",
@@ -199,7 +198,7 @@ export const ServerSidebar = async ({
             </div>
           </div>
         )}
-      </ScrollArea> */}
+      </ScrollArea>
     </div>
   )
 }

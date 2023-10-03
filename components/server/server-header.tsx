@@ -35,8 +35,8 @@ const ServerHeader = (
 ) => {
   const { onOpen } = useModal();
 
-  const isAdmin = role === 'ADMIN';
-  const isModerator = isAdmin || role === 'MODERATOR';
+  const isAdmin = role === MemberRole.ADMIN;
+  const isModerator = isAdmin || role === MemberRole.MODERATOR;
 
   return (
     <DropdownMenu>
@@ -83,7 +83,7 @@ const ServerHeader = (
         )}
         {isModerator && (
           <DropdownMenuItem
-            // onClick={() => onOpen("createChannel")}
+            onClick={() => onOpen("createChannel")}
             className="px-3 py-2 text-sm cursor-pointer"
           >
             Create Channel
@@ -95,7 +95,7 @@ const ServerHeader = (
         )}
         {isAdmin && (
           <DropdownMenuItem
-            // onClick={() => onOpen("deleteServer", { server })}
+            onClick={() => onOpen("deleteServer", { server })}
             className="text-rose-500 px-3 py-2 text-sm cursor-pointer"
           >
             Delete Server
@@ -104,7 +104,7 @@ const ServerHeader = (
         )}
         {!isAdmin && (
           <DropdownMenuItem
-            // onClick={() => onOpen("leaveServer", { server })}
+            onClick={() => onOpen("leaveServer", { server })}
             className="text-rose-500 px-3 py-2 text-sm cursor-pointer"
           >
             Leave Server
