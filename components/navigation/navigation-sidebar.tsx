@@ -9,7 +9,7 @@ import { NavigationItem } from '@/components/navigation/navigation-item';
 import { ModeToggle } from '@/components/mode-toggle';
 import { UserButton } from '@clerk/nextjs';
 
-const NavigationSidebar = async () => {
+export const NavigationSidebar = async () => {
     const profile = await currentProfile();
 
     if (!profile) return redirect('/')
@@ -60,5 +60,3 @@ const NavigationSidebar = async () => {
         </div>
     )
 }
-
-export default NavigationSidebar
