@@ -14,7 +14,7 @@ import { EditChannelModal } from "@/components/modals/edit-channel-modal"
 import { MessageFileModal } from "@/components/modals/message-file-modal"
 import { DeleteMessageModal } from "@/components/modals/delete-message-modal"
 
-const ModalProvider = () => {
+export const ModalProvider = () => {
     const [isMounted, setIsMounted] = useState(false)
 
     useEffect(() => {
@@ -41,5 +41,3 @@ const ModalProvider = () => {
         </>
     )
 }
-
-export default ModalProvider
