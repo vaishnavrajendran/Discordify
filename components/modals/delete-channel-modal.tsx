@@ -1,17 +1,17 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
 import qs from "query-string";
 import axios from "axios";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import {
     Dialog,
-    DialogTitle,
-    DialogDescription,
     DialogContent,
+    DialogDescription,
     DialogFooter,
     DialogHeader,
+    DialogTitle,
 } from "@/components/ui/dialog";
 import { useModal } from "@/hooks/use-modal-store";
 import { Button } from "@/components/ui/button";
@@ -34,6 +34,7 @@ export const DeleteChannelModal = () => {
                     serverId: server?.id,
                 }
             })
+
             await axios.delete(url);
 
             onClose();
