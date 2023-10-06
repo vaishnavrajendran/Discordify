@@ -1,5 +1,5 @@
-import { MemberRole } from "@prisma/client";
 import { NextResponse } from "next/server";
+import { MemberRole } from "@prisma/client";
 
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";

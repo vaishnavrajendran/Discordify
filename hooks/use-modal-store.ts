@@ -10,6 +10,7 @@ interface ModalData {
     apiUrl?: string;
     query?: Record<string, any>;
 }
+
 interface ModalStore {
     type: ModalType | null;
     data: ModalData;

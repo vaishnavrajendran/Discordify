@@ -1,13 +1,13 @@
 import { redirectToSignIn } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import { ChannelType } from "@prisma/client";
 
 import { currentProfile } from "@/lib/current-profile";
+import { ChatHeader } from "@/components/chat/chat-header";
 import { ChatInput } from "@/components/chat/chat-input";
 import { ChatMessages } from "@/components/chat/chat-messages";
 import { MediaRoom } from "@/components/media-room";
 import { db } from "@/lib/db";
-import { ChatHeader } from "@/components/chat/chat-header";
-import { ChannelType } from "@prisma/client";
 
 interface ChannelIdPageProps {
   params: {
@@ -31,16 +31,12 @@ const ChannelIdPage = async ({
     },
   });
 
-  if (!channel) return
-
   const member = await db.member.findFirst({
     where: {
       serverId: params.serverId,
       profileId: profile.id,
     }
   });
-
-  if (!member) return
 
   if (!channel || !member) {
     redirect("/");

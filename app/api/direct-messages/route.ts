@@ -19,7 +19,7 @@ export async function GET(
     if (!profile) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
-  
+
     if (!conversationId) {
       return new NextResponse("Conversation ID missing", { status: 400 });
     }
